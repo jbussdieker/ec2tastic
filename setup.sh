@@ -38,15 +38,15 @@ function create_user() {
 
 echo "Setting up server..."
 date
-echo "Installing build tools..."
-install_build_tools
+echo "Installing build tools (~2 minutes)..."
+install_build_tools > /dev/null 2>&1
 if [ $? -ne 0 ]; then
 	echo "Failed"
 	exit 1
 fi
 date
-echo "Installing system RVM..."
-install_system_rvm
+echo "Installing system RVM (~forever)..."
+install_system_rvm > /dev/null 2>&1
 if [ $? -ne 0 ]; then
 	echo "Failed"
 	exit 1
